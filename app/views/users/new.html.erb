@@ -30,10 +30,10 @@
 
 <%= form_with model: @user, url: "/users", method: :post do |form| %>
   <%= form.label :username, "Name" %>
-  <%= form.text_field :username %>
+  <%= form.text_field :username, placeholder: "Name or Nickname"  %>
   <%= form.label :email, "Email" %>
-  <%= form.email_field :email %>
+  <%= form.email_field :email, placeholder: "rour_email@email.com" %>
   <%= form.label :password, "Password" %>
-  <%= form.password_field :password %>
+  <%= form.password_field :password, placeholder: "secure password"  %>
   <%= form.submit "Submit" %>
 <% end %>
