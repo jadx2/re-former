@@ -1,0 +1,18 @@
+<%= form_with model: @user, method: :put do |form| %>
+  <%= form.label :username, "Name" %>
+  <%= form.text_field :username, placeholder: "Name or Nickname"  %>
+  <% @user.errors.full_messages_for(:username).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  <%= form.label :email, "Email" %>
+  <%= form.email_field :email, placeholder: "rour_email@email.com" %>
+  <% @user.errors.full_messages_for(:email).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  <%= form.label :password, "Password" %>
+  <%= form.password_field :password, placeholder: "secure password"  %>
+  <% @user.errors.full_messages_for(:password).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  <%= form.submit "Edit" %>
+<% end %>
